@@ -47,6 +47,8 @@ int main(int argc, char** argv){
       ("input,i", po::value<std::string>(), "input graph file")
       ("output,o", po::value<std::string>(), "output csv file")
       ("directed,d", "the graph input is directed")
+      ("colored_vertices,V", "the graph's vertices are colored")
+      ("colored_edges,E", "the graph's edges are colored")
       ("motif_size,s", po::value<int>(), "the size of the searched motifs. default = 4")
       ("rnd_nets,r", po::value<int>(), "the amount of random nets to compare the motif frequency. default = 1000")
   ;
@@ -84,6 +86,11 @@ int main(int argc, char** argv){
     bool gen_dumpfile = false;
 
     if(vm.count("directed"))
+      directed = true;
+    if(vm.count("colored_vertices"))
+      has_vertex_colors = true;
+    if(vm.count("colored_edges"))
+      has_edge_colors = true;
       directed = true;
     if(vm.count("motif_size"))
       G_N = vm["motif_size"].as<int>();
