@@ -47,6 +47,7 @@ int main(int argc, char** argv){
       ("input,i", po::value<std::string>(), "input graph file")
       ("output,o", po::value<std::string>(), "output csv file")
       ("directed,d", "the graph input is directed")
+      ("dump_file,D", "generate a subgraph dump file")
       ("colored_vertices,V", "the graph's vertices are colored")
       ("colored_edges,E", "the graph's edges are colored")
       ("motif_size,s", po::value<int>(), "the size of the searched motifs. default = 4")
@@ -92,6 +93,8 @@ int main(int argc, char** argv){
     if(vm.count("colored_edges"))
       has_edge_colors = true;
       directed = true;
+    if(vm.count("dump_file"))
+      gen_dumpfile = true;
     if(vm.count("motif_size"))
       G_N = vm["motif_size"].as<int>();
     if(vm.count("rnd_nets"))
