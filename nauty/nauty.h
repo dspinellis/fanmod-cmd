@@ -21,7 +21,7 @@ it is necessary to check they are correct.
 				 2 = in malloc.h, 0 = in neither place */
 
 #define SIZEOF_INT 4
-#define SIZEOF_LONG 4
+#define SIZEOF_LONG 8
 #define SIZEOF_LONG_LONG 8   /* 0 if nonexistent */
 
 #define HAVE_CONST 1    /* compiler properly supports const */
