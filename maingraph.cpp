@@ -82,13 +82,6 @@ bool read_graph(maingraph & maing, string filename, bool directed,
 			vertex maxuv = (u>v) ? u : v;
             if (maxuv > maing.n) {
 				maing.n = maxuv;
-                if (gen_dumpfile && (maxuv > 65535)){
-                    wxLogMessage(wxString(wxT("In Line ")) << linenumber << wxT(", vertex number ") 
-                        << maxuv << wxT(" was specified.\nLargest vertex number allowed with ") 
-                        << wxT(" an activated subgraph dump is 65535."), 
-                        wxT("Exceeded vertex limit"), wxICON_ERROR | wxOK);
-                    return false;
-                }
 				if (num_neighbours.size() <= maing.n) {
 					num_neighbours.resize(maing.n+1);
                     num_undir.resize(maing.n+1);
