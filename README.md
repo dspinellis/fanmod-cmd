@@ -6,8 +6,10 @@ the options are still very limited, but can be easily extended s.t. all
 options from the gui are available.
 
 # build & run
-build with './makefiles/make.sh.linux'
-the macos version is not supported!
+* Ensure the wxWidgets Cross-platform C++ GUI toolkit is installed
+(e.g. package libwxgtk3.0-dev under Debian or module wxWidgets/3.0.2)
+* build with './makefiles/make.sh.linux'
+* the macos version is not supported!
 
 run './fanmod-cmd --help' to see all available options
 
